@@ -1,0 +1,2 @@
+Cannt pull images from docker hub
+add dns server

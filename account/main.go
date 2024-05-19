@@ -9,17 +9,22 @@ import (
 	"syscall"
 	"time"
 
+	"github.com/Haibarapink/OpenDictionary/handler"
 	"github.com/gin-gonic/gin"
 )
 
 func handle_account(ctx *gin.Context) {
-
+	ctx.JSON(http.StatusOK, gin.H{
+		"asd": "Asd",
+	})
 }
 
 func main() {
 	log.Println("Server starting...")
 	router := gin.Default()
-	router.GET("/api/account", handle_account)
+	handler.NewHandler(&handler.Config{
+		R: router,
+	})
 	srv := http.Server{
 		Addr:    ":8080",
 		Handler: router,
